@@ -102,9 +102,9 @@ loginForm.addEventListener("submit", event => {
 
     //const email = event.target.email.value 
     // if (event.target.matches(userObj.email)) {
-    //     console.log("success!")
+        // console.log("success!")
+        // render that user's profile
     // }
-    //render that user's profile
 
     // let clicked = false;
     //   // Will only start if clicked is false
@@ -127,6 +127,8 @@ loginForm.addEventListener("submit", event => {
 profileBtn.addEventListener("click", event => {
     event.preventDefault()
     console.log("My Profile")
+    pageTitle.innerText = ""
+    pageTitle.innerText = "My Profile Page"
 
     // when a user clicks on the profile button
     // the profile page of the user is displayed in the main
