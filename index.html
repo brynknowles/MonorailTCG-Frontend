@@ -8,43 +8,33 @@
     <title>Monorail!</title>
 </head>
 <body>
-    <header>MonorailTCG</header>
 
+    <header id="app-name">Monorail TCG</header>
 
-    <nav class="nav-bar">
+    <nav class="navBar">
         <form id="login-form">
             <label for="email">Enter Your Email:</label>
-            <input type="text" name="email" value="your email here"><br>
-            <input type="submit" value="Log In">
+            <input type="text" name="email"><br>
+            <input type="submit" name="submit" value="Log In" id="submit">
         </form>
-            <ol>
-                <li class="nav-bar" id="profile">My Profile</li>
-                <li class="nav-bar" id="signup">SignUp</li>
-                <li class="nav-bar" id="newcard">NewCard</li>
-                <li class="nav-bar" id="logout">LogOut</li>
-            </ol>
+
+        <ul id="navBtns">
+            <li class="home" id="homepage">Home</li>
+            <li class="signup" id="signup">Sign Up!</li>
+            <li class="profile" id="profile">My Profile</li>
+            <li class="newcard" id="newcard">Create New Card</li>
+            <li class="logout" id="logout">Log Out</li>
+        </ul>
     </nav>
 
     <main>
-        <div id="search-bar">
-            <p id="title">All cards!</p>
+        <div id="title-container" class="title">
+            <p id="title">Simpsons Card Collection</p>
         </div>
-        <div id="profile"></div>
-        <div id="card-container" class="card-container">
-            <ul id="index-cards">
-                <!-- <li class="card">
-                    <div class="content">
-                        <h4>Homer</h4>
-                    </div>
-                    <div>
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR93E6BqL2WFPDQ6PzPmadPjWcY8uh5efP_-w&usqp=CAU">
-                    </div>
-
-                    <div>
-                        <p class="quote">D'oh!</p>
-                    </div>
-                </li>
-                -->
+        <div id="user-container"></div>
+        <div id="card-collection" class="card-collection">
+            <ul id="all-cards">
+                <!-- our newly rendered cards live here!-->
             </ul>
         </div>
     </main>
