@@ -12,8 +12,12 @@
 
 
     <nav class="nav-bar">
+        <form id="login-form">
+            <label for="email">Enter Your Email:</label>
+            <input type="text" name="email" value="your email here"><br>
+            <input type="submit" value="Log In">
+        </form>
             <ol>
-                <li class="nav-bar" id="login">LogIn</li>
                 <li class="nav-bar" id="profile">My Profile</li>
                 <li class="nav-bar" id="signup">SignUp</li>
                 <li class="nav-bar" id="newcard">NewCard</li>
@@ -23,8 +27,9 @@
 
     <main>
         <div id="search-bar">
-            <p>Search Bar!</p>
+            <p id="title">All cards!</p>
         </div>
+        <div id="profile"></div>
         <div id="card-container" class="card-container">
             <ul id="index-cards">
                 <!-- <li class="card">
