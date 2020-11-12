@@ -108,19 +108,6 @@ loginForm.addEventListener("submit", event => {
         // render that user's profile
     // }
 
-    // let clicked = false;
-    //   // Will only start if clicked is false
-    // if (!clicked) {
-    // // Set clicked to true
-    // clicked = true;
-
-    // // Do your processing here
-    // alert("You're already logged in!");
-
-    // // Re-enable after processing if you want
-    // // clicked = false;
-    // }
-
     renderUser
     getUser(3)
 })
