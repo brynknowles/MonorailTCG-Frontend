@@ -1,12 +1,6 @@
 // console.log("plswork")
 
-//plans for today
-//create forms
-//set up my profile click function
-//when clicked
-//remove all cards from card container
-//render cards where currentUserId === card.user_id
-// change p tag with all cards .textContent = user.name eg bryn's cards/profile
+
 
 // what do now - Thursday
 // on dom load get a page with users each user will be a p tag or h3 with an id equal to user id
@@ -44,6 +38,8 @@ const cardCollection = document.querySelector("#card-collection")
 
 let currentUserId = null
 
+//when user submits card form
+// post request
 
 // ********** RENDER FUNCTIONS **********
 
@@ -99,7 +95,7 @@ const renderOneCard = cardObj => {
         <div>
             <img src=${cardObj.image}>
         </div>
-
+        <button class="btn"><i class="fa fa-trash"></i></button>
         <div>
             <p class="quote">"${cardObj.quote}"</p>
         </div>
@@ -112,8 +108,26 @@ const renderOneCard = cardObj => {
 
 newCardForm.addEventListener("submit", event => {
     event.preventDefault()
-    console.log("plswork")
-    event.target.reset()
+    const newCardObj = {
+        character: event.target.character.value,
+        image: event.target.imageUrl.value,
+        quote: event.target.quote.value,
+        user_id: 12,
+    }    
+
+    fetch('http://localhost:3000/api/v1/cards', {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newCardObj)
+    })
+    .then(r => r.json())
+    .then(newObj => console.log(newObj))
+
+    renderOneCard(newCardObj)
+    // debugger
+    // event.target.reset()
 })
 
 // loginForm.addEventListener("submit", event => {
@@ -189,5 +203,4 @@ const getUser = id => {
 // ********** INITIALIZE **********
 
 // getUser(2)
-getCard(2)
 getAllCards()
