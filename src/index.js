@@ -143,13 +143,6 @@ newCardForm.addEventListener("submit", event => {
 // })
 
 
-
-newcardBtn.addEventListener("click", event => {
-    event.preventDefault()
-    console.log("newcard")
-    
-})
-
 logoutBtn.addEventListener("click", event => {
     event.preventDefault()
     console.log("logout")
