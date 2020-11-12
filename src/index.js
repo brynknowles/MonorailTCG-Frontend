@@ -29,6 +29,7 @@ const cardCollection = document.querySelector("#card-collection")
 
 let currentUserId = null
 
+
 // ********** RENDER FUNCTIONS **********
 
 const renderUserCard = userCardObj => {
@@ -43,7 +44,7 @@ const renderUserCard = userCardObj => {
         </div>
 
         <div>
-            <p class="quote">${userCardObj.quote}</p>
+            <p class="quote">"${userCardObj.quote}"</p>
         </div>
     `
     allCardsUl.append(li)
@@ -84,11 +85,12 @@ const renderOneCard = cardObj => {
         </div>
 
         <div>
-            <p class="quote">${cardObj.quote}</p>
+            <p class="quote">"${cardObj.quote}"</p>
         </div>
     `
     allCardsUl.append(li)
 }
+
 
 // ********** EVENT LISTENERS **********
 
@@ -122,7 +124,6 @@ loginForm.addEventListener("submit", event => {
     renderUser
     getUser(3)
 })
-
 
 profileBtn.addEventListener("click", event => {
     event.preventDefault()
