@@ -8,6 +8,19 @@
 //render cards where currentUserId === card.user_id
 // change p tag with all cards .textContent = user.name eg bryn's cards/profile
 
+// what do now - Thursday
+// on dom load get a page with users each user will be a p tag or h3 with an id equal to user id
+// click on a p tag and then get request to get that specific user and slap it on the dom
+// get rid of everything except home and log out
+// add create new card to home page
+// when someone signs in, save username as dataset id so that when new card is created
+// it belongs to it
+// if dataset id is not present on a new card, alert please sign in
+// seed real cards
+// signing in adds div with dataset id
+// log out would remove that div and therefore dataset
+// set up render for users cards
+
 
 // ********** DOM ELEMENTS **********
 
@@ -16,12 +29,13 @@ const allCardsUl = document.querySelector("#all-cards")
 const userContainer = document.querySelector("#user-container")
 
 const navBar = document.querySelector(".navBar")
-const loginForm = document.querySelector("#login-form")
-const profileBtn = document.querySelector("#profile")
-const signupBtn = document.querySelector("#signup")
-const newcardBtn = document.querySelector("#newcard")
-const logoutBtn = document.querySelector("#logout")
+
+
+
+
 const homeBtn = document.querySelector("#homepage")
+const logoutBtn = document.querySelector("#logout")
+
 const newCardForm = document.querySelector("#new-card-form")
 
 const pageTitle = document.querySelector("#title")
@@ -92,18 +106,7 @@ const renderOneCard = cardObj => {
     `
     allCardsUl.append(li)
 }
-//what do now
-// on dom load get a page with users each user will be a p tag or h3 with an id equal to user id
-// click on a p tag and then get request to get that specific user and slap it on the dom
-// get rid of everything except home and log out
-// add create new card to home page
-// when someone signs in, save username as dataset id so that when new card is created
-// it belongs to it
-// if dataset id is not present on a new card, alert please sign in
-// seed real cards
-//signing in adds div with dataset id
-//log out would remove that div and therefore dataset
-//set up render for users cards
+
 
 // ********** EVENT LISTENERS **********
 
@@ -113,37 +116,33 @@ newCardForm.addEventListener("submit", event => {
     event.target.reset()
 })
 
-loginForm.addEventListener("submit", event => {
-    event.preventDefault()
-    console.log("signed in")
-    allCardsUl.innerHTML = ""
-    pageTitle.innerHTML = ""
-    pageTitle.innerText = "My Profile Page"
+// loginForm.addEventListener("submit", event => {
+//     event.preventDefault()
+//     console.log("signed in")
+//     allCardsUl.innerHTML = ""
+//     pageTitle.innerHTML = ""
+//     pageTitle.innerText = "My Profile Page"
 
 
 
-    renderUser
-    getUser(3)
-})
+//     renderUser
+//     getUser(3)
+// })
 
-profileBtn.addEventListener("click", event => {
-    event.preventDefault()
-    console.log("My Profile")
-    pageTitle.innerText = ""
-    pageTitle.innerText = "My Profile Page"
+// profileBtn.addEventListener("click", event => {
+//     event.preventDefault()
+//     console.log("My Profile")
+//     pageTitle.innerText = ""
+//     pageTitle.innerText = "My Profile Page"
 
 
-    allCardsUl.innerHTML = ``
+//     allCardsUl.innerHTML = ``
 
-//    getUser(2)
-    //write function outside to render user cards
-})
+// //    getUser(2)
+//     //write function outside to render user cards
+// })
 
-signupBtn.addEventListener("click", event => {
-    event.preventDefault()
-    console.log("signup")
-    
-})
+
 
 newcardBtn.addEventListener("click", event => {
     event.preventDefault()
