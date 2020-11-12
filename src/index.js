@@ -22,6 +22,7 @@ const signupBtn = document.querySelector("#signup")
 const newcardBtn = document.querySelector("#newcard")
 const logoutBtn = document.querySelector("#logout")
 const homeBtn = document.querySelector("#homepage")
+const newCardForm = document.querySelector("#new-card-form")
 
 const pageTitle = document.querySelector("#title")
 
@@ -61,11 +62,12 @@ const renderUser = userObj => {
     userDiv.dataset.id = userObj.id
 
     userDiv.innerHTML = `
-        <p>${userObj.name} </p>
-        <p>${userObj.age} </p>
+        <p id="name">${userObj.name} </p>
+        <p id="age">${userObj.age} </p>
     `
     allCardsUl.innerHTML = ``
     userObj.cards.forEach(renderUserCard)
+    userContainer.innerHTML = ``
     userContainer.append(userDiv)
 }
 
@@ -90,23 +92,35 @@ const renderOneCard = cardObj => {
     `
     allCardsUl.append(li)
 }
-
+//what do now
+// on dom load get a page with users each user will be a p tag or h3 with an id equal to user id
+// click on a p tag and then get request to get that specific user and slap it on the dom
+// get rid of everything except home and log out
+// add create new card to home page
+// when someone signs in, save username as dataset id so that when new card is created
+// it belongs to it
+// if dataset id is not present on a new card, alert please sign in
+// seed real cards
+//signing in adds div with dataset id
+//log out would remove that div and therefore dataset
+//set up render for users cards
 
 // ********** EVENT LISTENERS **********
 
-//user types in email and submits
-//if email matches any users emails, currentUserId = that user id
-// then in our event listener, we can call getUser(currentUserId)
+newCardForm.addEventListener("submit", event => {
+    event.preventDefault()
+    console.log("plswork")
+    event.target.reset()
+})
+
 loginForm.addEventListener("submit", event => {
     event.preventDefault()
-    pageTitle.innerText = ""
+    console.log("signed in")
+    allCardsUl.innerHTML = ""
+    pageTitle.innerHTML = ""
     pageTitle.innerText = "My Profile Page"
 
-    //const email = event.target.email.value 
-    // if (event.target.matches(userObj.email)) {
-        // console.log("success!")
-        // render that user's profile
-    // }
+
 
     renderUser
     getUser(3)
@@ -118,17 +132,7 @@ profileBtn.addEventListener("click", event => {
     pageTitle.innerText = ""
     pageTitle.innerText = "My Profile Page"
 
-    // when a user clicks on the profile button
-    // the profile page of the user is displayed in the main
-    // all of the cards of that user will be displayed on the page
 
-    // when the user clicks the profile button
-    // render each of the user's cards
-    // slap them on the DOM
-    
-    // write a function to render the user's cards/show page inside the div#card-container
-        // if card.user_id === user.id
-        // render card(s) to page
     allCardsUl.innerHTML = ``
 
 //    getUser(2)
