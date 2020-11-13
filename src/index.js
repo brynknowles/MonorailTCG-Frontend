@@ -14,7 +14,7 @@
 // signing in adds div with dataset id
 // log out would remove that div and therefore dataset
 // set up render for users cards
-
+// delete buttons
 
 // ********** DOM ELEMENTS **********
 
@@ -85,26 +85,56 @@ const renderAllCards = cardArray => {
     cardArray.forEach(cardObj => renderOneCard(cardObj))
 }
 
+
 const renderOneCard = cardObj => {
-    const li = document.createElement('li')
-    li.setAttribute("class", "card")
-    li.innerHTML = `
+    const card = document.createElement('li')
+    card.dataset.id = cardObj.id
+    
+    card.setAttribute("class", "card")
+    card.innerHTML = `
         <div class="content">
             <h4>${cardObj.character}</h4>
         </div>
         <div>
             <img src=${cardObj.image}>
         </div>
-        <button class="btn"><i class="fa fa-trash"></i></button>
+        <button class="delete-button" type="button">X</button>
         <div>
             <p class="quote">"${cardObj.quote}"</p>
         </div>
     `
-    allCardsUl.append(li)
+
+
+    
+
+
+    allCardsUl.append(card)
 }
 
+//event handlers
+function handleCharacterListClick(event) {
+    if(event.target.matches(".delete-button")) {
+        const button = event.target
+        const card = button.closest(".card")
+        const id = card.dataset.id
+
+
+
+            fetch(`http://localhost:3000/api/v1/cards/${id}`, {
+                method: 'DELETE',
+            })
+            .then(r => r.json())
+            
+        
+        card.remove()
+    }
+    console.log(event.target)
+}
 
 // ********** EVENT LISTENERS **********
+allCardsUl.addEventListener("click", handleCharacterListClick)
+
+
 
 newCardForm.addEventListener("submit", event => {
     event.preventDefault()
@@ -174,6 +204,7 @@ homeBtn.addEventListener("click", event => {
 
 
 // ********** FETCH REQUESTS **********
+
 
 const getAllUsers = () => {
     fetch('http://localhost:3000/api/v1/users')
