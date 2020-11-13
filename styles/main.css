@@ -6,8 +6,18 @@ body {
         "nav nav"
         "main main"
     ;
+    background: url("https://wallpapercave.com/wp/wp4267621.jpg");
+
 }
 
+.main {
+
+    justify-content: center;
+}
+
+#new-card-form {
+    text-align: center;
+}
 
 header {
     grid-area: header;
@@ -36,20 +46,47 @@ header {
     text-align: center;
     display: flex;
     justify-content: center;
-
+font-family: 'Architects Daughter', cursive;
+font-family: 'Montserrat', sans-serif;
 } */
+#app-name {
+    text-align: center;
+    height: 6rem;
+    width: auto;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 72px;
+}
 
 .card {
     text-align: center;
-    border: grey solid 1px;
-    padding: 1rem;
-    width: 15rem;
+    border: rgb(5, 5, 5) solid 4px;
+    padding: 2px;
+    width: 14rem;
     height: 25rem;
     display: inline-grid;
-    margin: 1rem 2rem;
-    box-shadow: 3px 4px #4b4a44
+    margin: 15px;
+    box-shadow: 3px 4px #525250;
+    border-radius: 5px;
+    background-color: rgb(247, 216, 158);
+    justify-content: center;
+}
+
+.card-image {
+    justify-self: center;
+    height: 15rem;
+    width: auto;
+    border: grey solid 2px;
 }
 
 .delete-button {
     max-width: 50px;
+}
+
+.card-name {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 25px;
+}
+
+.quote {
+    font-family: 'Montserrat', sans-serif;
 }

@@ -91,7 +91,7 @@ const renderOneCard = cardObj => {
             <h4>${cardObj.character}</h4>
         </div>
         <div>
-            <img src=${cardObj.image}>
+            <img class="card-image"src=${cardObj.image}>
         </div>
         <button class="delete-button" type="button">X</button>
         <div>
