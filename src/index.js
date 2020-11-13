@@ -88,10 +88,10 @@ const renderOneCard = cardObj => {
     card.setAttribute("class", "card")
     card.innerHTML = `
         <div class="content">
-            <h4>${cardObj.character}</h4>
+            <h4 class="card-name">${cardObj.character}</h4>
         </div>
         <div>
-            <img src=${cardObj.image}>
+            <img class="card-image" src=${cardObj.image}>
         </div>
         <button class="delete-button" type="button">X</button>
         <div>
