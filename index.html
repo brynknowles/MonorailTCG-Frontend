@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/main.css">
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Montserrat:ital@0;1&display=swap" rel="stylesheet">
     <script defer src="./src/index.js"></script>
     <title>Monorail!</title>
 </head>
 <body>
-
+    <div id="background-image"></div>
     <header id="app-name">Monorail TCG</header>
 
     <!-- <nav class="navBar">
@@ -25,11 +26,11 @@
         </ul>
     </nav> --> 
 
-    <main>
+    <main class="main">
         <div id="title-container" class="title">
-            <p id="title">Simpsons Card Collection</p>
+
         </div>
-        <form id="new-card-form">
+        <form id="new-card-form" autocomplete="off">
             <h4>Add a New Card!</h4>
             <label for="character">Character:</label>
             <input type="text" name="character" id="character"/>
@@ -41,6 +42,7 @@
         </form>
         <div id="user-container"></div>
         <div id="card-collection" class="card-collection">
+            <p id="title">Simpsons Card Collection</p>
             <ul id="all-cards">
                 <!-- our newly rendered cards live here!-->
             </ul>

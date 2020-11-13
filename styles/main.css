@@ -7,75 +7,65 @@ body {
         "main main"
     ;
     background: url("https://wallpapercave.com/wp/wp4267621.jpg");
+    background-attachment: fixed;
+    background-size: cover;
 
+    
+
+}
+
+
+#new-card-form {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 20px;
+    color: rgb(235, 211, 0);
+    text-align: center;
+    font-weight: 200;
 }
 
 .main {
-
     justify-content: center;
 }
 
-#new-card-form {
-    text-align: center;
-}
+
 
 header {
     grid-area: header;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 
-/* nav {
-    grid-area: nav;
-    border: 2px solid blue;
-} */
-
-/* #navBtns {
-    list-style-type: none;
-} */
-
-/* main {
-    grid-area: main;
-    border: 2px solid green;
-} */
-
-/* #all-cards {
-    list-style-type: none;
-} */
-
-/* .card {
-    text-align: center;
-    display: flex;
+.content {
     justify-content: center;
-font-family: 'Architects Daughter', cursive;
-font-family: 'Montserrat', sans-serif;
-} */
+}
+
 #app-name {
     text-align: center;
     height: 6rem;
     width: auto;
     font-family: 'Architects Daughter', cursive;
     font-size: 72px;
+    color: rgb(235, 211, 0)
 }
 
 .card {
     text-align: center;
     border: rgb(5, 5, 5) solid 4px;
-    padding: 2px;
+    padding: 1rem;
     width: 14rem;
     height: 25rem;
     display: inline-grid;
-    margin: 15px;
+    margin: 1rem 2rem;
     box-shadow: 3px 4px #525250;
     border-radius: 5px;
-    background-color: rgb(247, 216, 158);
+    background-color: rgb(197, 239, 255);
     justify-content: center;
 }
 
 .card-image {
     justify-self: center;
-    height: 15rem;
+    height: 12rem;
     width: auto;
-    border: grey solid 2px;
+    /* border: grey solid 2px; */
 }
 
 .delete-button {
@@ -89,4 +79,12 @@ font-family: 'Montserrat', sans-serif;
 
 .quote {
     font-family: 'Montserrat', sans-serif;
+}
+
+#title {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 30px;
+    color: rgb(235, 211, 0);
+    text-align: center;
+    font-weight: 200;
 }
