@@ -10,7 +10,7 @@
     <title>Monorail!</title>
 </head>
 <body>
-
+    <div id="background-image"></div>
     <header id="app-name">Monorail TCG</header>
 
     <!-- <nav class="navBar">
@@ -28,9 +28,9 @@
 
     <main class="main">
         <div id="title-container" class="title">
-            <p id="title">Simpsons Card Collection</p>
+
         </div>
-        <form id="new-card-form">
+        <form id="new-card-form" autocomplete="off">
             <h4>Add a New Card!</h4>
             <label for="character">Character:</label>
             <input type="text" name="character" id="character"/>
@@ -42,6 +42,7 @@
         </form>
         <div id="user-container"></div>
         <div id="card-collection" class="card-collection">
+            <p id="title">Simpsons Card Collection</p>
             <ul id="all-cards">
                 <!-- our newly rendered cards live here!-->
                 <!-- this will be what our update/edit button looks like, but this code will go inside the renderOneCard function

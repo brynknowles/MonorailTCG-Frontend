@@ -88,14 +88,13 @@ const renderOneCard = cardObj => {
     card.setAttribute("class", "card")
     card.innerHTML = `
         <div class="content">
+
             <h4 class="card-name">${cardObj.character}</h4>
-        </div>
-        <div>
             <img class="card-image" src=${cardObj.image}>
-        </div>
-        <button class="delete-button" type="button">X</button>
-        <div>
             <p class="quote">"${cardObj.quote}"</p>
+                        <button class="delete-button" type="button">X</button>
+
+
         </div>
     `
     allCardsUl.append(card)
@@ -113,19 +112,35 @@ function handleCharacterListClick(event) {
         const card = button.closest(".card")
         const id = card.dataset.id
 
-
-
             fetch(`http://localhost:3000/api/v1/cards/${id}`, {
                 method: 'DELETE',
             })
             .then(r => r.json())
             .then(data => console.log(data))
-            
-        
-        card.remove()
-        
+        card.remove() 
+
+    } else if (event.target.matches(".card-name")) {
+        console.log(event.target.innerText)
+        const h2 = event.target
+        const name = event.target.innerText
+        const card = h2.closest(".card")
+        const id = card.dataset.id
+        console.log(id)
+        fetch(`http://localhost:3000/api/v1/cards/${id}/reverse`, {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: name
+            })
+        })
+        .then(r => r.json())
+        .then(data => {
+            // h2.innerText = reversedName
+            h2.innerText = data.name
+        })
     }
-    console.log(event.target)
 }
 
 // ********** EVENT LISTENERS **********
@@ -133,6 +148,9 @@ function handleCharacterListClick(event) {
 // we need to create an event listener that takes in the arguement of the event handler for the update/edit 
 
 allCardsUl.addEventListener("click", handleCharacterListClick)
+
+
+
 
 newCardForm.addEventListener("submit", event => {
     event.preventDefault()
@@ -155,7 +173,7 @@ newCardForm.addEventListener("submit", event => {
 
     renderOneCard(newCardObj)
     // debugger
-    // event.target.reset()
+    event.target.reset()
 })
 
 // loginForm.addEventListener("submit", event => {
@@ -233,3 +251,48 @@ const getUser = id => {
 
 // getUser(2)
 getAllCards()
+
+// else if(event.target.matches(".edit-button")) {
+//     const button = event.target
+//     const card = button.closest(".card")
+//     const id = card.dataset.id
+//     console.log("clicked")
+//     newCardForm.id = "edit-form"
+//     const editForm = document.querySelector("#edit-form")
+//     // let cardImg = button.closest('.card-image')
+//     // editForm.imageUrl.value = cardImg.src
+//     // console.log(cardImg)
+//     fetch(`http://localhost:3000/api/v1/cards/${id}`)
+//     .then(r => r.json())
+//     .then(cardObj => {
+//         editForm.imageUrl.value = cardObj.image
+//         editForm.character.value = cardObj.character
+//         editForm.quote.value = cardObj.quote
+
+//     })
+//     .then(()=> {
+//         editForm.addEventListener("submit", event => {
+//             event.preventDefault()
+//             const newCardObj = {
+//                 character: event.target.character.value,
+//                 image: event.target.imageUrl.value,
+//                 quote: event.target.quote.value,
+//                 // user_id: 12
+//             }    
+        
+//             fetch(`http://localhost:3000/api/v1/cards/${id}`, {
+//                 method: 'PATCH',
+//                 headers: {
+//                     "Content-Type": "application/json"
+//                 },
+//                 body: JSON.stringify(newCardObj)
+//             })
+//             .then(r => r.json())
+//             .then(newObj => console.log(newObj))
+        
+
+//             // debugger
+//             // event.target.reset()
+//         })
+//     })
+//         newCardForm.id = "new-card-for
