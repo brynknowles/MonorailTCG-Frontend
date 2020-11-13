@@ -31,3 +31,14 @@ main {
 #all-cards {
     list-style-type: none;
 }
+
+.card {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+.delete-button {
+    max-width: 50px;
+}
