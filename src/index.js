@@ -124,6 +124,7 @@ function handleCharacterListClick(event) {
                 method: 'DELETE',
             })
             .then(r => r.json())
+            .then(getAllCards());
             
         
         card.remove()
