@@ -84,6 +84,13 @@ font-family: 'Montserrat', sans-serif;
 
 .delete-button {
     max-width: 50px;
+    text-align: center;
+}
+
+/* Liam this is the theoretical update button css */
+.update-button {
+    max-width: 50px;
+    text-align: center;
 }
 
 .card-name {
