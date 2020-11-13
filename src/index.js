@@ -24,9 +24,6 @@ const userContainer = document.querySelector("#user-container")
 
 const navBar = document.querySelector(".navBar")
 
-
-
-
 const homeBtn = document.querySelector("#homepage")
 const logoutBtn = document.querySelector("#logout")
 
@@ -36,10 +33,8 @@ const pageTitle = document.querySelector("#title")
 
 const cardCollection = document.querySelector("#card-collection")
 
-let currentUserId = null
+// let currentUserId = null
 
-//when user submits card form
-// post request
 
 // ********** RENDER FUNCTIONS **********
 
@@ -103,15 +98,11 @@ const renderOneCard = cardObj => {
             <p class="quote">"${cardObj.quote}"</p>
         </div>
     `
-
-
-    
-
-
     allCardsUl.append(card)
 }
 
-//event handlers
+// ********** EVENT HANDLERS **********
+
 function handleCharacterListClick(event) {
     if(event.target.matches(".delete-button")) {
         const button = event.target
@@ -134,6 +125,7 @@ function handleCharacterListClick(event) {
 }
 
 // ********** EVENT LISTENERS **********
+
 allCardsUl.addEventListener("click", handleCharacterListClick)
 
 
@@ -189,20 +181,20 @@ newCardForm.addEventListener("submit", event => {
 // })
 
 
-logoutBtn.addEventListener("click", event => {
-    event.preventDefault()
-    console.log("logout")
+// logoutBtn.addEventListener("click", event => {
+//     event.preventDefault()
+//     console.log("logout")
     
-})
+// })
 
-homeBtn.addEventListener("click", event => {
-    event.preventDefault()
-    console.log("Home!")
-    pageTitle.innerText = ""
-    pageTitle.innerText = "Simpsons Card Collection"
+// homeBtn.addEventListener("click", event => {
+//     event.preventDefault()
+//     console.log("Home!")
+//     pageTitle.innerText = ""
+//     pageTitle.innerText = "Simpsons Card Collection"
     
-    getAllCards()
-})
+//     getAllCards()
+// })
 
 
 // ********** FETCH REQUESTS **********

@@ -1,5 +1,5 @@
 body {
-    background-color: #FFF8E7;
+    background-color: #dfdbc6;
     display: grid;
     grid-template-areas: 
         "header header"
@@ -14,29 +14,40 @@ header {
     border: 2px solid red;
 }
 
-nav {
+/* nav {
     grid-area: nav;
     border: 2px solid blue;
-}
+} */
 
-#navBtns {
+/* #navBtns {
     list-style-type: none;
-}
+} */
 
-main {
+/* main {
     grid-area: main;
     border: 2px solid green;
-}
+} */
 
-#all-cards {
+/* #all-cards {
     list-style-type: none;
-}
+} */
 
-.card {
+/* .card {
     text-align: center;
     display: flex;
     justify-content: center;
 
+} */
+
+.card {
+    text-align: center;
+    border: grey solid 1px;
+    padding: 1rem;
+    width: 15rem;
+    height: 25rem;
+    display: inline-grid;
+    margin: 1rem 2rem;
+    box-shadow: 3px 4px #4b4a44
 }
 
 .delete-button {
