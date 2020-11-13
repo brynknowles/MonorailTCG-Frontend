@@ -80,7 +80,7 @@ const renderAllCards = cardArray => {
     cardArray.forEach(cardObj => renderOneCard(cardObj))
 }
 
-
+// we need to add the button div and button element inside this render function for edit/update
 const renderOneCard = cardObj => {
     const card = document.createElement('li')
     card.dataset.id = cardObj.id
@@ -102,6 +102,10 @@ const renderOneCard = cardObj => {
 }
 
 // ********** EVENT HANDLERS **********
+
+// we need to create a handler for a click event on the update/edit button here
+// it will include a fetch PATCH cards/id request
+// it will also include an edit card form
 
 function handleCharacterListClick(event) {
     if(event.target.matches(".delete-button")) {
@@ -126,9 +130,9 @@ function handleCharacterListClick(event) {
 
 // ********** EVENT LISTENERS **********
 
+// we need to create an event listener that takes in the arguement of the event handler for the update/edit 
+
 allCardsUl.addEventListener("click", handleCharacterListClick)
-
-
 
 newCardForm.addEventListener("submit", event => {
     event.preventDefault()
